@@ -10,7 +10,14 @@ public class Solution {
 
     public static int ConvertBinaryArrayToInt(List<Integer> binary) {
         // Your Code
-        return 0;
+        int summ = 0;
+
+        for (int i : binary) {
+            summ += i;
+        }
+
+
+        return summ;
     }
 
 }

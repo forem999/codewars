@@ -1,9 +1,7 @@
 package rt.codewars.task2;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions.*;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 
 public class Tests {

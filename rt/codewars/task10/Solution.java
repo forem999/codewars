@@ -1,7 +1,6 @@
-package rt.codewars.test10;
+package rt.codewars.task10;
 
 import java.util.*;
-import java.util.stream.*;
 
 public class Solution {
 

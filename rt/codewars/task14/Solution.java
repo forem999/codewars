@@ -9,7 +9,8 @@ import java.util.HashSet;
 public class Solution {
 
     public static void main(String[] args) {
-        validateWord("aabbrr");
+
+        System.out.println(validateWord("aabbrrddd"));
     }
 
 
@@ -22,7 +23,7 @@ public class Solution {
         }
         System.out.println(charMap.values());
         HashSet<Integer> hset = new HashSet<>(charMap.values());
-        return hset.size() > 1 ? false : true;
+        return hset.size() == 1;
 
     }
 }

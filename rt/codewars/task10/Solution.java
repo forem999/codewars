@@ -1,23 +1,25 @@
 package rt.codewars.task10;
 
 import java.util.*;
+import java.util.HashMap;
 
 public class Solution {
 
     public static void main(String[] args) {
-        System.out.println(maxBall(37));
+        System.out.println(maxBall(45));
     }
 
 
 
     public static int maxBall(int v0) {
         // your code
-        Map records = new HashMap();
-        double vInMs = (v0*1000)/3600;
+        HashMap<Integer, Double> records = new HashMap<>();
+        double vInMs = v0/3.6;
         double g = 9.81;
         double t = 0.0;
-        double h = 0;
         int k = 0;
+        int result = 0;
+        double max = 0;
         records.put(0, vInMs*t-0.5*g*t*t);
 
         while (vInMs*t-0.5*g*t*t >= 0) {
@@ -26,9 +28,15 @@ public class Solution {
             records.put(k,vInMs*t-0.5*g*t*t);
         }
         System.out.println(records);
-        
 
-        return 1;
+        for (Map.Entry<Integer, Double> entry : records.entrySet()) {
+            if (entry.getValue() > max ) {
+                max = entry.getValue();
+                result = entry.getKey();
+            }
+        }
+
+        return  result;
     }
 
 }

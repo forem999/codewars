@@ -1,45 +1,34 @@
-// https://www.codewars.com/kata/59d9ff9f7905dfeed50000b0/train/java
-
 package rt.codewars.task33;
 
-import java.util.ArrayList;
-import java.util.List;
+//https://www.codewars.com/kata/5ca24526b534ce0018a137b5/train/java
+
+
 
 public class Solution {
 
     public static void main(String[] args) {
 
-        System.out.println(solve(new String[]{"abide","ABc","xyz"}));
-
     }
 
-    public static int[] solve(String[] arr){
-        // do your thing
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        char[] alphaArr = alphabet.toCharArray();
+    public static String sendMessage(String message) {
 
-        char[] charArr;
+        StringBuilder sb = new StringBuilder();
+        boolean upFlag = false;
         int count = 0;
-        List<Integer> xc = new ArrayList<>();
-
-        for (String s : arr) {
-            charArr = s.toCharArray();
-            for (int i=0; i < charArr.length; i++) {
-                if (Character.toLowerCase(charArr[i]) == alphaArr[i]) {
-                    count++;
-                }
+        char[] charArr = message.toCharArray();
+        char curChar =' ';
+        for (char c : charArr) {
+            if (c == curChar) {
+                count++;
+            } else {
+                curChar = c;
+                count = 0;
             }
-            xc.add(count);
-            count = 0;
+
         }
 
-        int[] result = new int[xc.size()];
-        for (int i =0; i <result.length - 1; i++) {
-            result[i] = xc.get(i);
-        }
-
-
-        return result;
-
+        return message;
     }
+
+
 }
